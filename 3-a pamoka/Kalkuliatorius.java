@@ -6,9 +6,10 @@ public class Kalkuliatorius {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String komanda = "";
+        String testi = "";
 
         do {
-            System.out.print("Iveskite, ka norite daryti (sudeti, atimti, padalinti, padauginti, liekana, ar \"quite\" uzbaigti): ");
+            System.out.print("Iveskite, ka norite daryti (sudeti, atimti, padalinti, padauginti, liekana): ");
             komanda = input.next().toLowerCase();
             System.out.print("Iveskite pirma skaiciu: ");
             double pirmasSkaicius = input.nextDouble();
@@ -33,6 +34,8 @@ public class Kalkuliatorius {
                 default:
                     System.out.println("Ivesta neteisinga komanda");
             }
-        } while (!komanda.equals("quite"));
+            System.out.print("Ar norite testi (y/n) : ");
+            testi = input.next().toLowerCase();
+        } while (testi.equals("y"));
     }
 }
